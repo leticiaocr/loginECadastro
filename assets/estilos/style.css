@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+/*GERAL----------------------------------------------------------*/
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5E7312;
+
+}
+/*DIV CONTAINER*/
+.container {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px #403C08;
+    
+}
+/*IMAGEM DO FORM GERAL-------------------------------------------*/
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    align-items: center;
+    background-color: #fde3a7d7;
+
+}
+
+.form-image img {
+    width: 41rem;
+}
+/*FORMULÁRIO GERAL-----------------------------------------------------*/
+.form {
+    width: 50%;
+    display: flex;
+    border-radius: 0 10px 10px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+.form-header {
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    color: #403C08;
+}
+/*BOTÃO DE LOGIN DO FORM---------------------------------------------*/
+
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.login-button button {
+    border: none;
+    background-color: #A60303;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover {
+    background-color: #F20C0C;
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+}
+
+/*INPUTS DO FORMULÁRIO----------------------------------------------------------*/
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #A60303;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 12px;
+}
+
+
+.input-box label,
+.genero-titulo h6 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #403C08;
+}
+
+.input-box input::placeholder {
+    color: #403C08
+}
+/*SELECT ----------------------------------------------------------*/
+
+.genero{
+    margin: 10px;
+    padding: 5px;
+    width: 150px;
+    border: 1px solid #A60303;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 12px;
+}
+.genero select{
+    border: none;
+}
+/*INPUT SUBMIT----------------------------------------------------------*/
+
+.submit input {
+    width: 100%;
+    margin-top: 40px;
+    border: none;
+    background-color: #A60303;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    
+}
+
+.submit input:hover {
+    background-color: #F20C0C;
+}
+
+
+/*------------------------------CADASTRO CUPOM----------------------------------------*/
+
+
+/*BOTÃO DE SAIR DO FORMULARIO (ÁREA LOGADA DE CADASTRO DE CUPONS)-----------------------------*/
+
+.logout-button {
+    display: flex;
+    align-items: flex-start;
+}
+
+.logout-button button {
+    border: none;
+    background-color: #A60303;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button button:hover {
+    background-color: #F20C0C;
+}
+
+.logout-button button a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+}
+
+/*------------------------------FORMULÁRIO DE LOGIN----------------------------------------*/
+
+
+/*BOTÃO DE CADASTRO DO FORMULARIO (FORM DE LOGIN - OPÇÃO DE SE CADASTRAR CASO USUÁRIO NÃO TENHA CADASTRO)-----------------------------*/
+
+
+.cadastro-button {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+}
+
+.cadastro-button button {
+    border: none;
+    background-color: #A60303;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cadastro-button button:hover {
+    background-color: #F20C0C;
+}
+
+.cadastro-button button a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+}
+/*DIV CONTAINER DO FORM DE LOGIN--------------------------------------------------*/
+.container-login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    box-shadow: 5px 5px 10px #403C08;
+    
+}
+/*FORMULÁRIO LOGIN----------------------------------------------*/
+.form-login {
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+.form-headerlogin {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    color: #403C08;
+}
+.form-imagelogin {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    background-color: #fde3a7d7;
+
+}
+.form-imagelogin img {
+    width: 100%;
+    overflow: hidden;
+}
+.input-boxlogin {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.input-boxlogin input {
+    margin: 10px;
+    padding: 12px;
+    width: 380px;
+    border: 1px solid #A60303;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 12px;
+}
+/*------------------------------ÁREA ADMINISTRATIVA----------------------------------------*/
+
+
+.buttons-adm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:#ffffff;
+    padding: 80px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px #403C08;
+
+}
+.adm {
+    padding: 10px;
+    margin: 10px;
+    margin-left: 30px;
+    background: #A60303;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.buttons-adm a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.buttons-adm button:hover {
+    background-color: #F20C0C;
+}
+
+#adm{
+    color: #403C08;
+    padding-bottom: 30px;
+}

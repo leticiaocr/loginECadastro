@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/estilos/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/feliznatal1200.jpg" alt="img-natal">
+        </div>
+
+        <div class="form">
+            <form action="cadastroCupom.php" id="cadastroCupom" name="cadastroCupom" method="post">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Cadastre seu cupom</h1>
+                    </div>
+                    <div class="logout-button">
+                        <button><a href="#">Sair</a></button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="cod">Código do cupom:</label>
+                        <input type="text" name="codigo" placeholder="Digite o código do seu cupom" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="valor">Valor do cupom:</label>
+                        <input type="text" name="valorcupom" placeholder="Digite o valor do seu cupom" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="dataCompra">Data da compra:</label>
+                        <input type="date" name="dataCompra" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="horaCompra">Horário da compra</label>
+                        <input type="time" name="horaCompra" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="status">Status do cupom:</label>
+                        <input type="text" name="status" placeholder="Status do cupom" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="loja">Loja:</label>
+                        <input type="text" name="loja" placeholder="Loja em que a compra foi realizada" required>
+                    </div>
+
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Enviar">
+                </div>
+
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
