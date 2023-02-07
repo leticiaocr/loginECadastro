@@ -1,5 +1,6 @@
 <?php
 include 'inc/conecta.php';
+session_start();
 
 // VALIDAÇÃO --------------------------------------------
 

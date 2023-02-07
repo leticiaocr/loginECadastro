@@ -1,5 +1,11 @@
 <?php
 include 'inc/conecta.php';
+// tenho que ter em todas as telas que for necessário estar logado para utilizar
+session_start();
+if ($_SESSION['logado'] != 'OK') {
+    header('Location: login.html');
+}
+
 
 // VALIDAÇÕES ------------------------------
 
@@ -52,8 +58,8 @@ try {
     ];
 }
 
-// VERIFICAR SE O CUPOM PERTENCE AO TITULAR DA AREA LOGADA (não funcionou)
-/*try {
+// VERIFICAR SE O CUPOM PERTENCE AO TITULAR DA AREA LOGADA 
+try {
     $sql = "SELECT * FROM pessoas WHERE EMAIL = '$_SESSION[email]'";
     $con = mysqli_query($conexao, $sql); //abre a conexão e roda a variavel sql no banco
     $qtdPessoas = mysqli_num_rows($con); // aqui ele mostra quantas pessoas foram encontradas pelo select
@@ -71,7 +77,7 @@ try {
         "mensagem" => $e->getMessage()
     ];
 }
-*/
+
 
 
 
@@ -162,3 +168,4 @@ function vinculaNumeroSorte($numeroSorte, $codCupom, $conexao)
         ];
     }
 }
+

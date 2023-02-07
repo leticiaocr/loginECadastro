@@ -47,7 +47,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .form-header {
@@ -100,7 +100,7 @@ body {
     margin: 10px;
     padding: 10px;
     width: 250px;
-    border: 1px solid #A60303;
+    border: 1px solid #403C08;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 12px;
@@ -124,7 +124,7 @@ body {
     margin: 10px;
     padding: 5px;
     width: 150px;
-    border: 1px solid #A60303;
+    border: 1px solid #403C08;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 12px;
@@ -184,9 +184,6 @@ body {
 /*------------------------------FORMULÁRIO DE LOGIN----------------------------------------*/
 
 
-/*BOTÃO DE CADASTRO DO FORMULARIO (FORM DE LOGIN - OPÇÃO DE SE CADASTRAR CASO USUÁRIO NÃO TENHA CADASTRO)-----------------------------*/
-
-
 .cadastro-button {
     display: flex;
     align-items: flex-start;
@@ -213,8 +210,8 @@ body {
 }
 /*DIV CONTAINER DO FORM DE LOGIN--------------------------------------------------*/
 .container-login {
-    width: 100%;
-    height: 100vh;
+    width: 80%;
+    height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px #403C08;
     
@@ -231,13 +228,13 @@ body {
 }
 
 .form-headerlogin {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: space-between;
     color: #403C08;
 }
 .form-imagelogin {
-    width: 100%;
+    width: 80%;
     display: flex;
     overflow: hidden;
     background-color: #fde3a7d7;
@@ -251,44 +248,86 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #403C08;
 }
 
 .input-boxlogin input {
     margin: 10px;
     padding: 12px;
     width: 380px;
-    border: 1px solid #A60303;
+    border: 1px solid #403C08;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 12px;
 }
+#forgot , #forgot a{
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #403C08;
+}
+
+
+#forgot a:hover{
+    font-size: 15px;
+}
 /*------------------------------ÁREA ADMINISTRATIVA----------------------------------------*/
 
-
-.buttons-adm{
+fieldset{
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    background:#ffffff;
-    padding: 80px;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 5px 5px 5px 5px #403C08;
+    flex-direction: column;
+    width: 320px;
+    height: 430px;
+    background-color: #5E7312;
+    border-radius: 10px;
+    border: 1px solid #403C08;
+    box-shadow: 10px 10px 10px #00000069;
+}
+
+legend{
+    font-size: 20px;
+    color: white;
+    background-color: #403C08;
+    border-radius: 10px;
+    padding: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 10px 10px 10px #00000042;
 
 }
+.buttons-adm{
+    text-align: center;
+    background: #fff9f9;
+    border: none;
+    
+    
+}
 .adm {
+    
     padding: 10px;
     margin: 10px;
-    margin-left: 30px;
     background: #A60303;
     border: none;
     border-radius: 10px;
+    width: 200px;
+
 
 }
+.buttons-adm button{
+    box-shadow: 2px 2px 5px #0000004b;
+}
+
 
 .buttons-adm a{
     text-decoration: none;
     color: white;
+    
     
 }
 
@@ -296,7 +335,17 @@ body {
     background-color: #F20C0C;
 }
 
-#adm{
-    color: #403C08;
-    padding-bottom: 30px;
+/*LISTAR CLIENTES ----------------------------------------------------------*/
+
+/*Tabela*/
+
+/*botao*/
+
+#voltar{
+    padding: 10px;
+    margin: 10px;
+    background: #A60303;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
 }

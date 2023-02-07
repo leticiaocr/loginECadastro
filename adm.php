@@ -9,18 +9,17 @@
     <title>Área administrativa</title>
 </head>
 
-<body style= "background: rgb(94,115,18);
-background: linear-gradient(90deg, rgba(94,115,18,1) 0%, rgba(136,170,13,1) 50%, rgba(176,190,129,1) 100%);">
+<body style="background: white;">
 
     <div class="buttons-adm">
-        <h1 id="adm">Área administrativa</h1>
-
-        <button class="adm"><a href="#">Listar clientes</a></button>
-        <button class="adm"><a href="#">Ver cupons do cliente</a></button>
-        <button class="adm"><a href="#">Ver números da sorte</a></button>
-        <button class="adm"><a href="#">Realizar sorteio</a></button>
-        <button class="adm"><a href="#">Sair</a></button>
-
+    <fieldset>
+<legend>Área administrativa</legend>
+        <button class="adm"><a href="views/listarClientes.php">Listar clientes</a></button>
+        <button class="adm"><a href="views/verCupons.php">Ver cupons do cliente</a></button>
+        <button class="adm"><a href="views/listarNumerosSorte.php">Ver números da sorte</a></button>
+        <button class="adm"><a href="views/realizarSorteio.php">Realizar sorteio</a></button>
+        <button class="adm"><a href="login.html">Sair</a></button>
+    </fieldset>
     </div>
 
 
