@@ -3,10 +3,10 @@ include '../inc/conecta.php';
 try {
     $sql = "SELECT NUMEROSORTE FROM cuponscadastrados WHERE NUMEROSORTE IS NOT NULL";
     $con = mysqli_query($conexao, $sql);
-    $qtdNumerosSorte = mysqli_num_rows($con); // aqui ele mostra quantas pessoas foram encontradas pelo select
+    $qtdNumerosSorte = mysqli_num_rows($con);
 
     if ($qtdNumerosSorte > 0) {
-        $numerosSorte = mysqli_fetch_all($con); // se quantidade de pessoas for maior que 0, o myqsli fetch all vai trazer TODOS os dados encontrados pelo select
+        $numerosSorte = mysqli_fetch_all($con);
 
 
         foreach ($numerosSorte as $numero) {
@@ -20,7 +20,7 @@ try {
                     </table>";
         }
     }
-} catch (Exception $e) { // vai cair no catch quando tiver algum erro de sintaxe no sql 
+} catch (Exception $e) {
 
     return [
         "sucesso" => false,
@@ -29,5 +29,11 @@ try {
 }
 
 echo "<form action='../adm.php' method='post'>
-<button type='submit' id='voltar' ><a href='../adm.php'></a> Voltar</button>
+<button type='submit' id='voltar' style='padding: 10px;
+margin: 10px;
+background: #A60303;
+border: none;
+border-radius: 10px;
+width: 200px;
+color: white; '  ><a href='../adm.php'></a> Voltar</button>
 </form>";

@@ -1,13 +1,15 @@
 <?php
 include 'formCadastro.html';
 include 'inc/conecta.php';
+session_start();
 
-//1. TRATAR OS DADOS QUE SERÃO ÚTEIS DE FORMA SEPARADA PARA EVITAR PROBLEMAS
-// ex: fazer uma validação para ver se os dados foram preenchidos e não foram enviados vazios. (isset e empty)
-// 2. fazer um if para verificar se alguma variável tem o valor falso
-// 3. conectar com o banco (criar o arquivo conecta.php e fazer o try catch)
+$bloqueado = isset($_SESSION['bloqueado']) ? $_SESSION['bloqueado'] : 'NAO';
+if ($bloqueado == 'SIM') {
+    echo "O sorteio já foi realizado";
+    exit;
+}
 
-// ============================== VALIDACOES ==============================
+// ------------------------------------------ VALIDACOES ------------------------------------------
 
 
 $nome = (isset($_POST['nome'])) ? $_POST['nome'] : false;
@@ -19,7 +21,7 @@ $confirmSenha = (isset($_POST['confirmSenha'])) ? $_POST['confirmSenha'] : false
 $genero = (isset($_POST['genero'])) ? $_POST['genero'] : false;
 
 
-// ============================== TRATATIVAS ==============================
+// ------------------------------------------ TRATATIVAS ------------------------------------------
 
 if ($nome == false || $email == false || $cpf == false || $dataNascimento == false || $senha == false || $confirmSenha == false || $genero == false) {
     echo "Algum dos parâmetros necessários não foi preenchido, tente novamente.";
@@ -38,7 +40,7 @@ if (strlen($cpf) != 11) {
 
 
 
-// ============================== CONEXÃO COM O BANCO ==============================
+// ------------------------------------------ CONEXÃO COM O BANCO ------------------------------------------
 
 try {
     $sql = "INSERT INTO pessoas (NOME, EMAIL, CPF , DATANASCIMENTO, SENHA, GENERO)

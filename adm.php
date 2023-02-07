@@ -12,14 +12,14 @@
 <body style="background: white;">
 
     <div class="buttons-adm">
-    <fieldset>
-<legend>Área administrativa</legend>
-        <button class="adm"><a href="views/listarClientes.php">Listar clientes</a></button>
-        <button class="adm"><a href="views/verCupons.php">Ver cupons do cliente</a></button>
-        <button class="adm"><a href="views/listarNumerosSorte.php">Ver números da sorte</a></button>
-        <button class="adm"><a href="views/realizarSorteio.php">Realizar sorteio</a></button>
-        <button class="adm"><a href="login.html">Sair</a></button>
-    </fieldset>
+        <fieldset>
+            <legend>Área administrativa</legend>
+            <button class="adm"><a href="views/listarClientes.php">Listar clientes</a></button>
+            <button class="adm"><a href="views/verCupons.php">Ver cupons do cliente</a></button>
+            <button class="adm"><a href="views/listarNumerosSorte.php">Ver números da sorte</a></button>
+            <button class="adm"><a href="views/realizarSorteio.php">Realizar sorteio</a></button>
+            <button class="adm"><a href="login.html">Sair</a></button>
+        </fieldset>
     </div>
 
 

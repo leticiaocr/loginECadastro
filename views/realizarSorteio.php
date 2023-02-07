@@ -1,25 +1,23 @@
 <?php
 
-// 1 - Pegar todos os números da sorte
-// 2 - Pegar um número aleatorio dentro desses números da sorte (array_rand)
-// 3 - Depois que o sorteio for realizado, impedir de cadastrar clientes e cupons
-// 3.1 - Pensar em uma maneira de identificar quando o sorteio for cadastrado ou não (parecido com o Login)
-// 3.2 - FIM
 include '../inc/conecta.php';
+session_start();
+
 try {
     $sql = "SELECT NUMEROSORTE FROM cuponscadastrados WHERE NUMEROSORTE IS NOT NULL";
     $con = mysqli_query($conexao, $sql);
-    $qtdNumerosSorte = mysqli_num_rows($con); // aqui ele mostra quantas pessoas foram encontradas pelo select
+    $qtdNumerosSorte = mysqli_num_rows($con);
 
     if ($qtdNumerosSorte > 0) {
-        $numerosSorte = mysqli_fetch_all($con); // se quantidade de pessoas for maior que 0, o myqsli fetch all vai trazer TODOS os dados encontrados pelo select
-        // Você tem o indice do array sorteado
+        $numerosSorte = mysqli_fetch_all($con);
 
         $resultSorteio = $numerosSorte[array_rand($numerosSorte, 1)];
         $numeroSorte = $resultSorteio[0];
-        echo "O número sorteado foi $numeroSorte";
+        echo "<p style='font-size: 18px; display: inline-block; background-color: #403C08; color: white; padding: 10px; border-radius: 8px;'> O número sorteado foi $numeroSorte </p>";
+        
+        $_SESSION['bloqueado'] = 'SIM';
     }
-} catch (Exception $e) { // vai cair no catch quando tiver algum erro de sintaxe no sql 
+} catch (Exception $e) {
 
     return [
         "sucesso" => false,
@@ -28,5 +26,12 @@ try {
 }
 
 echo "<form action='../adm.php' method='post'>
-<button type='submit' id='voltar' ><a href='../adm.php'></a> Voltar</button>
+<button type='submit' id='voltar' style='padding: 6px;
+margin: 10px;
+background: #A60303;
+border: none;
+border-radius: 10px;
+width: 100px;
+color: white; display: block;'><a href='../adm.php'></a> Voltar</button>
 </form>";
+

@@ -19,18 +19,17 @@ if ($email == false || $senha == false) {
 try {
     $sql = "SELECT * FROM pessoas WHERE EMAIL = '$email' and SENHA = '$senha'";
     $con = mysqli_query($conexao, $sql);
-    $qtdPessoas = mysqli_num_rows($con); // aqui ele mostra quantas pessoas foram encontradas pelo select
+    $qtdPessoas = mysqli_num_rows($con);
 
     if ($qtdPessoas > 0) {
-        $pessoa = mysqli_fetch_assoc($con); // se quantidade de pessoas for maior que 0, o myqsli fetch assoc vai trazer os dados que foram encontrados pelo select
-
+        $pessoa = mysqli_fetch_assoc($con);
         $_SESSION['logado'] = 'OK';
         $_SESSION['email'] =  $pessoa['EMAIL'];
         header('Location: cadastroCupom.html');
     } else {
         header('Location: login.html');
     }
-} catch (Exception $e) { // vai cair no catch quando tiver algum erro de sintaxe no sql 
+} catch (Exception $e) {
     return [
         "sucesso" => false,
         "mensagem" => $e->getMessage()

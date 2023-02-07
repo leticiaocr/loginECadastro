@@ -1,9 +1,15 @@
 <?php
 include 'inc/conecta.php';
-// tenho que ter em todas as telas que for necessário estar logado para utilizar
 session_start();
 if ($_SESSION['logado'] != 'OK') {
     header('Location: login.html');
+}
+
+
+$bloqueado = isset($_SESSION['bloqueado']) ? $_SESSION['bloqueado'] : 'NAO';
+if ($bloqueado == 'SIM') {
+    echo "O sorteio já foi realizado";
+    exit;
 }
 
 
@@ -29,14 +35,6 @@ if (strlen($cpf) != 11) {
     exit;
 }
 
-/*CREATE TABLE cuponsCadastrados(
-    CODIGO VARCHAR (12), 
-    CPF VARCHAR (11),
-    VALOR VARCHAR (10), 
-    LOJA VARCHAR (100),
-    DATAHORACOMPRA DATETIME,
-    STATUS VARCHAR (30) DEFAULT 'ATIVO'); */
-
 
 // CONEXÃO COM O BANCO------------------------------------------------------------
 
@@ -44,8 +42,8 @@ if (strlen($cpf) != 11) {
 // VERIFICAR SE JÁ EXISTE UM CUPOM CADASTRADO COM O MESMO CÓDIGO
 try {
     $sql = "SELECT * FROM cuponscadastrados WHERE CODIGO = '$codCupom'";
-    $con = mysqli_query($conexao, $sql); //abre a conexão e roda a variavel sql no banco
-    $qtdcupons = mysqli_num_rows($con); // aqui ele mostra quantas pessoas foram encontradas pelo select
+    $con = mysqli_query($conexao, $sql);
+    $qtdcupons = mysqli_num_rows($con);
 
     if ($qtdcupons > 0) {
         echo "Já existe um cupom cadastrado com esse código";
@@ -61,9 +59,8 @@ try {
 // VERIFICAR SE O CUPOM PERTENCE AO TITULAR DA AREA LOGADA 
 try {
     $sql = "SELECT * FROM pessoas WHERE EMAIL = '$_SESSION[email]'";
-    $con = mysqli_query($conexao, $sql); //abre a conexão e roda a variavel sql no banco
-    $qtdPessoas = mysqli_num_rows($con); // aqui ele mostra quantas pessoas foram encontradas pelo select
-
+    $con = mysqli_query($conexao, $sql);
+    $qtdPessoas = mysqli_num_rows($con);
     if ($qtdPessoas > 0) {
         $pessoa = mysqli_fetch_assoc($con);
         if ($pessoa['CPF'] != $cpf) {
@@ -137,23 +134,19 @@ function geraNumeroSorte($cpf, $conexao)
 {
     $numeroSorte = rand(100000, 999999);
 
-    $sql = "SELECT NUMEROSORTE FROM cuponscadastrados WHERE NUMEROSORTE = '$numeroSorte'"; // verificando se existe algum numero da sorte igual o que foi gerado
-    $con = mysqli_query($conexao, $sql); //abre a conexão e roda a variavel sql no banco
-    $result = mysqli_fetch_assoc($con); // fetch assoc traz os resultados do select
-
-    if (!empty($result)) { // fetch assoc trouxe os resultados >> se tiver algum número igual a função irá rodar de novo até encontrar um número que ainda não foi usado
+    $sql = "SELECT NUMEROSORTE FROM cuponscadastrados WHERE NUMEROSORTE = '$numeroSorte'";
+    $con = mysqli_query($conexao, $sql);
+    $result = mysqli_fetch_assoc($con);
+    if (!empty($result)) {
         geraNumeroSorte($cpf, $conexao);
     }
 
 
-    return $numeroSorte; // se não tiver um número da sorte igual, ele vai retornar o numero da sorte
+    return $numeroSorte;
 }
 
-// Essa função estou passando o parametro CPF para fazer o select e o conexão para conectar no banco de dados. Vou gerar um numero da sorte randomico. 
-//O NÚMERO RAND NAO PODE SER REPETIDO
 
 
-// inserir o numero da sorte pelo codigo do cupom pois os cpf podem se repetir. Eu quero vincular um número da sorte em um cupom
 
 function vinculaNumeroSorte($numeroSorte, $codCupom, $conexao)
 {
@@ -168,4 +161,3 @@ function vinculaNumeroSorte($numeroSorte, $codCupom, $conexao)
         ];
     }
 }
-
