@@ -72,8 +72,9 @@ body {
 .login-button button {
     border: none;
     background-color: #A60303;
-    padding: 10px;
-    width: 200px;
+    padding: 8px;
+    width: 100px;
+    margin-right: 30px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -174,8 +175,9 @@ body {
 .logout-button button {
     border: none;
     background-color: #A60303;
-    padding: 10px;
-    width: 150px;
+    padding: 8px;
+    width: 80px;
+    margin-right: 30px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -202,9 +204,10 @@ body {
 .cadastro-button button {
     border: none;
     background-color: #A60303;
-    padding: 10px;
-    width: 150px;
+    padding: 8px;
+    width: 100px;
     border-radius: 5px;
+    margin-right: 30px;
     cursor: pointer;
 }
 
@@ -300,7 +303,7 @@ fieldset {
     justify-content: center;
     flex-direction: column;
     width: 320px;
-    height: 430px;
+    height: 490px;
     background-color: #5E7312;
     border-radius: 10px;
     border: 1px solid #403C08;
@@ -355,11 +358,6 @@ legend {
     background-color: #F20C0C;
 }
 
-/*LISTAR CLIENTES ----------------------------------------------------------*/
-
-/*Tabela*/
-
-/*botao*/
 
 #voltar {
     padding: 10px;
@@ -368,4 +366,8 @@ legend {
     border: none;
     border-radius: 10px;
     width: 200px;
+}
+#voltar a{
+    color: white;
+    text-decoration: none;
 }

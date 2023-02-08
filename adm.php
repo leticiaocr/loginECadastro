@@ -17,6 +17,8 @@
             <button class="adm"><a href="views/listarClientes.php">Listar clientes</a></button>
             <button class="adm"><a href="views/verCupons.php">Ver cupons do cliente</a></button>
             <button class="adm"><a href="views/listarNumerosSorte.php">Ver números da sorte</a></button>
+            <button class="adm"><a href="views/atualizarClientes.php">Atualizar clientes</a></button>
+            <button class="adm"><a href="views/deletarClientes.php">Deletar Clientes</a></button>
             <button class="adm"><a href="views/realizarSorteio.php">Realizar sorteio</a></button>
             <button class="adm"><a href="login.html">Sair</a></button>
         </fieldset>
