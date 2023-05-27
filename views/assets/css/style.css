@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --cor-principal: #202020;
+    --cor-destaque: #ff0077;
+    --cor-texto: #f2f2f2;
+    --cor-detalhe: #d2d6da;
+    --cor-hover: #ff1582ee;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+/*MENU LATERAL*/
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: var(--cor-principal);
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 var(--cor-destaque);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-expandir>i {
+    color: var(--cor-texto);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.itens-menu>ul {
+    height: 100%;
+}
+
+ul li.item-menu {
+    transition: .5s;
+    list-style-type: none;
+
+}
+
+ul li.ativo {
+    background-color: var(--cor-destaque);
+}
+
+ul li.item-menu:hover {
+    background: var(--cor-destaque);
+}
+
+
+ul li.item-menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 25px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 80px;
+    transition: .8s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+    margin-left: 40px;
+    opacity: 1;
+
+}
+
+ul li.item-menu a .icon>i {
+    font-size: 30px;
+    margin-left: 10px;
+
+}
+
+/*FIM ==========================================================*/
+
+/*PÁGINA LOGIN ==========================================================*/
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login {
+    background-color: var(--cor-texto);
+    border-radius: 12px;
+    width: 450px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    position: absolute
+}
+
+.login-redes-sociais {
+    display: flex;
+    color: var(--cor-texto);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 130px;
+    background-color: var(--cor-destaque);
+    border-radius: 12px;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 430px;
+}
+
+.titulo-login {
+    margin-bottom: 20px;
+}
+
+.icons-social span {
+    margin: 20px;
+}
+
+.icons-social i:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.input-group {
+    margin-top: 40px;
+}
+
+.input-group input {
+    border: 1px solid var(--cor-detalhe);
+    border-radius: 6px;
+    padding: 15px 12px;
+    width: 90%;
+    margin-top: 20px;
+}
+
+
+.lembrar-senha {
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.lembrar-senha label {
+    margin-left: 10px;
+}
+
+.submit-button {
+    font-weight: bold;
+    padding: 15px 12px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    width: 90%;
+    border: 1px solid var(--cor-detalhe);
+    border-radius: 6px;
+    margin-top: 20px;
+
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background-color: var(--cor-hover);
+    font-size: 15px;
+}
+
+.cadastre-se,
+.entrar {
+    margin-top: 35px;
+    font-size: 15px;
+}
+
+.cadastre-se,
+.entrar a {
+    color: var(--cor-destaque);
+
+}
+
+.cadastre-se,
+.entrar a:hover {
+    cursor: pointer;
+    color: var(--cor-hover);
+    font-size: 18px;
+}
+
+/*FIM ==========================================================*/
+
+/*PÁGINA CADASTRO ==========================================================*/
+.container-cadastro {
+    display: flex;
+    height: 100vh;
+}
+
+.imagem-form {
+    width: 55%;
+    height: 100vh;
+    background-image: url(../img/background-login.jpg);
+    background-size: contain;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 45%;
+}
+
+.cadastro {
+    background-color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+}
+
+.cadastro-titulo{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 23px;
+
+}
+
+.cadastro-titulo h1,p {
+    margin-top: 10px;
+
+}
+
+.input-cadastro{
+    margin-top: 5px;
+}
